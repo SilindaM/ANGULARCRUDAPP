@@ -1,9 +1,11 @@
 <div class="container">
-    <div class="card">
+  <div class="card">
+     <div class="card-body">
+      <div class="container">
         <form [formGroup]="muntuForm" (ngSubmit)="onSubmit()">
             <div class="mb-3">
               <label for="recipient-name" class="col-form-label">Name:</label>
-              <input type="text" class="form-control" formControlName="name" id="recipient-name">
+              <input type="text" class="form-control" formControlName="name" >
               <span class="errors" *ngIf="!nameValidator.valid && nameValidator.touched">Required</span>
             </div>
             <div class="mb-3">
@@ -11,7 +13,33 @@
               <input type="text" class="form-control" formControlName="surname" id="recipient-surname">
               <span class="errors" *ngIf="!surnameValidator.valid && surnameValidator.touched">Required</span>
             </div>
-            <div class="btn btn-primary">SUBMIT</div>
+            <button class="btn btn-primary" type="submit" >SUBMIT</button>
           </form>
-    </div>
+</div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Surname</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let a of munt">
+            <td>{{a.id}}</td>
+            <td>{{a.name}}</td>
+            <td>{{a.surname}}</td>
+            <td>
+            <button class="btn btn-warning" (click)="editPerson(muntuForm.value)">EDIT</button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="deletePerson(a.id)">DELETE</button>
+            </td>
+          </tr> 
+        </tbody>
+      </table>
+     </div>
+  </div>
 </div>

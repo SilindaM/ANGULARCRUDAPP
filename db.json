@@ -1,19 +1,14 @@
 {
-  "posts": [
+  "people": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "6",
+      "surname": "sas",
+      "id": 3
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "gfgg",
+      "surname": "sdddsdsds",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
